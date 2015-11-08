@@ -1,36 +1,39 @@
 {
-	"schemaVersion":"1.1",
-	"nodes":[
+	"schemaVersion": "1.1",
+	"nodes": [
 		{
-			"name":"STM32F1",
+			"name": "STM32F1",
 			"type": "component",
-			"description":"A container for the packages supporting the STM32F1 family of microcontrollers.",
-			"activeIf":"cmsis.family === 'STM32F1'"
+			"description": "A container for the packages supporting the STM32F1 family of microcontrollers.",
+			"activeIf": "cmsis.family === 'STM32F1'"
 		},
+
 		{
-			"name":"STM32F2",
+			"name": "STM32F2",
 			"type": "component",
-			"description":"A container for the packages supporting the STM32F2 family of microcontrollers.",
-			"activeIf":"cmsis.family === 'STM32F2'"
+			"description": "A container for the packages supporting the STM32F2 family of microcontrollers.",
+			"activeIf": "cmsis.family === 'STM32F2'"
 		},
+
 		{
-			"name":"STM32F3",
+			"name": "STM32F3",
 			"type": "component",
-			"description":"A container for the packages supporting the STM32F3 family of microcontrollers.",
-			"activeIf":"cmsis.family === 'STM32F3'"
+			"description": "A container for the packages supporting the STM32F3 family of microcontrollers.",
+			"activeIf": "cmsis.family === 'STM32F3'"
 		},
+
 		{
-			"name":"STM32F4",
+			"name": "STM32F4",
 			"type": "component",
-			"description":"A container for the packages supporting the STM32F4 family of microcontrollers.",
-			"activeIf":"cmsis.family === 'STM32F4'"
+			"description": "A container for the packages supporting the STM32F4 family of microcontrollers.",
+			"activeIf": "cmsis.family === 'STM32F4'"
 		},
+
 		{
-			"name":"STM32F7",
+			"name": "STM32F7",
 			"type": "component",
-			"description":"A container for the packages supporting the STM32F7 family of microcontrollers.",
-			"activeIf":"cmsis.family === 'STM32F7'"
+			"description": "A container for the packages supporting the STM32F7 family of microcontrollers.",
+			"activeIf": "cmsis.family === 'STM32F7'"
 		}
-		
 	]
 }
