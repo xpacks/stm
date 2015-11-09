@@ -1,12 +1,8 @@
 {
-	"schemaVersion": "1.1",
+	"$schema": "http://xcdl.github.io/schemas/xpack-1-1.json",
 	"name": "STM32",
 	"parent": "/ilg",
-	"description": "A container for all STM32 microcontroller families. Each family has a 
-separate component, active only if the device is part of that family.
-Further package like CMSIS or HAL are children of these components.
-The entire package is active only if the device vendor is 13
-(STMicroelectronics).",
+	"description": "A container for all STM32 microcontroller families. Each family has a separate component, active only if the device is part of that family. Further package like CMSIS or HAL are children of these components. The entire package is active only if the device vendor is 13 (STMicroelectronics).",
 	"activeIf": "cmsis.vendorId === 13",
 	"repository": 
 	{
@@ -36,17 +32,17 @@ The entire package is active only if the device vendor is 13
 	],
 
 	"homepage": "https://github.com/xpacks/stm32",
-	"bugs": 
-	{
-		"type": "github",
-		"url": "https://github.com/xpacks/stm32/issues"
-	},
+	"bugs": [
+		{
+			"url": "https://github.com/xpacks/stm32/issues"
+		}
+	],
 
 	"license": "GPL-3.0",
 	"maintainers": [
 		{
 			"name": "Liviu Ionescu",
-			"email": "ilg@livius.net</email",
+			"email": "ilg@livius.net",
 			"url": "http://liviusdotnet.worldpress.com"
 		}
 	],
@@ -54,7 +50,7 @@ The entire package is active only if the device vendor is 13
 	"contributors": [
 		{
 			"name": "Liviu Ionescu",
-			"email": "ilg@livius.net</email",
+			"email": "ilg@livius.net",
 			"url": "http://liviusdotnet.worldpress.com"
 		}
 	],
