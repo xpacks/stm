@@ -1,5 +1,5 @@
 {
-	"schemaVersion": "1.1",
+	"$schema": "http://xcdl.github.io/schemas/xcdl-1-1.json",
 	"nodes": [
 		{
 			"name": "STM32F1",
