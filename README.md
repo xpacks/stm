@@ -1,9 +1,7 @@
-# STM32
+# / ilg / STM
 
 This is a glue package, to be used as parent for all STM32 families, 
 to automatically de-activate the unused STM packages.
-
-The full path name is `/ilg/STM32`.
 
 The entire pacakge is active only if the device vendor is STMicroelectronics (id === 13). 
 
