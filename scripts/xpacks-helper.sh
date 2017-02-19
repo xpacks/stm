@@ -23,15 +23,24 @@ do_add_stm32_cmsis_xpack() {
 
   do_select_pack_folder "${scope}/${pack_name}.git"
 
+  local include_path="${pack_folder}/Drivers/CMSIS/Device/ST/STM32${family_uc}xx/Include"
+  local src_path="${pack_folder}/Drivers/CMSIS/Device/ST/STM32${family_uc}xx/Source/Templates"
+  if [ "${family}" == "f3" ]
+  then
+    # Some Keil packages have different paths.
+    include_path="${pack_folder}/Device/Include"
+    src_path="${pack_folder}/Device/Source"
+  fi
+
   do_prepare_dest "${pack_name}/${device}/include"
-  do_add_content "${pack_folder}/Drivers/CMSIS/Device/ST/STM32${family_uc}xx/Include/cmsis_device.h" 
-  do_add_content "${pack_folder}/Drivers/CMSIS/Device/ST/STM32${family_uc}xx/Include/stm32${family}xx.h" 
-  do_add_content "${pack_folder}/Drivers/CMSIS/Device/ST/STM32${family_uc}xx/Include/${device}.h" 
-  do_add_content "${pack_folder}/Drivers/CMSIS/Device/ST/STM32${family_uc}xx/Include/system_stm32${family}xx.h" 
+  do_add_content "${include_path}/cmsis_device.h" 
+  do_add_content "${include_path}/stm32${family}xx.h" 
+  do_add_content "${include_path}/${device}.h" 
+  do_add_content "${include_path}/system_stm32${family}xx.h" 
 
   do_prepare_dest "${pack_name}/${device}/src"
-  do_add_content "${pack_folder}/Drivers/CMSIS/Device/ST/STM32${family_uc}xx/Source/Templates/system_stm32${family}xx.c" 
-  do_add_content "${pack_folder}/Drivers/CMSIS/Device/ST/STM32${family_uc}xx/Source/Templates/gcc/vectors_${device}.c" 
+  do_add_content "${src_path}/system_stm32${family}xx.c" 
+  do_add_content "${src_path}/gcc/vectors_${device}.c" 
 }
 
 # -----------------------------------------------------------------------------
