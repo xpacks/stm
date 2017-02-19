@@ -7,15 +7,21 @@
 # -----------------------------------------------------------------------------
 
 # $1 = device name suffix (like "stm32f407xx")
+# $2 (optional) = scope (like ilg, lix, ...)
 do_add_stm32_cmsis_xpack() {
   local device=$(echo $1 | tr '[:upper:]' '[:lower:]')
   local family=${device:5:2}
   local family_uc=$(echo ${family} | tr '[:lower:]' '[:upper:]')
+  local scope="ilg"
+  if [ $# -ge 2 ]
+  then
+    scope = "$2"
+  fi
 
   local pack_name="stm32${family}-cmsis"
   do_tell_xpack "${pack_name}-xpack"
 
-  do_select_pack_folder "ilg/${pack_name}.git"
+  do_select_pack_folder "${scope}/${pack_name}.git"
 
   do_prepare_dest "${pack_name}/${device}/include"
   do_add_content "${pack_folder}/Drivers/CMSIS/Device/ST/STM32${family_uc}xx/Include/cmsis_device.h" 
@@ -31,13 +37,19 @@ do_add_stm32_cmsis_xpack() {
 # -----------------------------------------------------------------------------
 
 # $1 = family name (like "f0", "f4", ...)
+# $2 (optional) = scope (like ilg, lix, ...)
 do_add_stm32_cmsis_driver_xpack() {
   local family=$(echo $1 | tr '[:upper:]' '[:lower:]')
+  local scope="ilg"
+  if [ $# -ge 2 ]
+  then
+    scope = "$2"
+  fi
 
   local pack_name="stm32${family}-cmsis"
   do_tell_xpack "${pack_name}-xpack"
 
-  do_select_pack_folder "ilg/${pack_name}.git"
+  do_select_pack_folder "${scope}/${pack_name}.git"
 
   do_prepare_dest "${pack_name}/driver/src"
   do_add_content "${pack_folder}/CMSIS/Driver/"* 
@@ -49,15 +61,21 @@ do_add_stm32_cmsis_driver_xpack() {
 # -----------------------------------------------------------------------------
 
 # $1 = family shortcut (like "f0", "f4", ...)
+# $2 (optional) = scope (like ilg, lix, ...)
 do_add_stm32_hal_xpack() {
   local family=$(echo $1 | tr '[:upper:]' '[:lower:]')
   local family_uc=$(echo ${family} | tr '[:lower:]' '[:upper:]')
+  local scope="ilg"
+  if [ $# -ge 2 ]
+  then
+    scope = "$2"
+  fi
 
   local pack_name="stm32${family}-hal"
 
   do_tell_xpack "${pack_name}-xpack"
 
-  do_select_pack_folder "ilg/${pack_name}.git"
+  do_select_pack_folder "${scope}/${pack_name}.git"
 
   do_prepare_dest "${pack_name}/include"
   do_add_content "${pack_folder}/Drivers/STM32${family_uc}xx_HAL_Driver/Inc"/* 
