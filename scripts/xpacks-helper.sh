@@ -15,7 +15,7 @@ do_add_stm32_cmsis_xpack() {
   local scope="ilg"
   if [ $# -ge 2 ]
   then
-    scope = "$2"
+    scope="$2"
   fi
 
   local pack_name="stm32${family}-cmsis"
@@ -43,7 +43,7 @@ do_add_stm32_cmsis_driver_xpack() {
   local scope="ilg"
   if [ $# -ge 2 ]
   then
-    scope = "$2"
+    scope="$2"
   fi
 
   local pack_name="stm32${family}-cmsis"
@@ -68,7 +68,7 @@ do_add_stm32_hal_xpack() {
   local scope="ilg"
   if [ $# -ge 2 ]
   then
-    scope = "$2"
+    scope="$2"
   fi
 
   local pack_name="stm32${family}-hal"
